@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: microservice_sinatra_development
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: microservice_sinatra_production
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: microservice_sinatra_test
