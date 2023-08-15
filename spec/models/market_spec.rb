@@ -14,6 +14,7 @@ RSpec.describe Market, type: :model do
 
       it '::accepts_benefits' do 
         result = Market.accepts_benefits
+        require 'pry'; binding.pry
         expect(result.count).to eq(4) 
       end
 

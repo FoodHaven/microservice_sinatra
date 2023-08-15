@@ -79,6 +79,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   database_cleaner
+  database_cleaner-active_record
   factory_bot
   faker
   pg
