@@ -4,5 +4,5 @@ database_name = "microservice_sinatra_#{Microservice.environment}"
 # connect ActiveRecord with the current database
 ActiveRecord::Base.establish_connection(
   adapter: 'postgresql',
-  database: "db/#{database_name}",
+  database: "#{database_name}",
 )

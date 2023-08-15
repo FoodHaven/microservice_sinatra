@@ -2,6 +2,13 @@ require 'bundler'
 Bundler.require(:default, :test)
 require File.expand_path('../../config/environment.rb', __FILE__)
 
+require 'factory_bot'
+require_relative 'factories'
+
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+end
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
