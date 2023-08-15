@@ -1,0 +1,1 @@
+system('rake markets_csv_load:all')
