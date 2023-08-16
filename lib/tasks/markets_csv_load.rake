@@ -1,28 +1,30 @@
 require 'csv'
+require './app/models/market'
 
 namespace :csv_load do 
-  desc 'markets'
+  # desc 'markets'
   task markets: :environment do 
-    csv_text = File.read('db/data/farmersmarkets.csv')
-    csv = CSV.parse(csv_text, :headers => true)
-    csv.each do |row|
-      t = Market.new
-      t.name = row['listing_name']
-      t.address = row['location_address']
-      t.site = row['location_site']
-      t.description = row['location_desc']
-      t.fnap = row['FNAP']
-      t.snap_option = row['SNAP_option']
-      t.accepted_payment = row['acceptedpayment']
-      t.longitude = row['location_x']
-      t.latitude = row['location_y']
-      t.created_at = row['update_time']
-      t.save
+    csv = CSV.foreach("./db/data/farmersmarkets.csv", :headers => true) do |row|
+      Market.create!(
+        id: row['id'],
+        name: row['listing_name'],
+        address: row['location_address'],
+        site: row['location_site'],
+        description: row['location_desc'],
+        fnap: row['FNAP'],
+        snap_option: row['SNAP_option'],
+        accepted_payment: row['acceptedpayment'],
+        longitude: row['location_x'],
+        latitude: row['location_y']
+      )
     end
+    ActiveRecord::Base.connection.reset_pk_sequence!('markets')
   end
 
   task all: :environment do
-    desc "all"
-      Rake::Task["csv_load:markets"].invoke
+    # desc "all"
+      Rake::Task["csv_load:markets"].execute
   end
 end
+
+#look into foreach

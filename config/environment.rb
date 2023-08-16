@@ -1,5 +1,5 @@
-# require "bundler"
-# Bundler.require
+require "bundler"
+Bundler.require
 # get the path of the root of the app
 APP_ROOT = File.expand_path('..', __dir__)
 # require the controller(s)

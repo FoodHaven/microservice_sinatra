@@ -1,1 +1,1 @@
-Rake::Task["csv_load:markets"].invoke
+Rake::Task["csv_load:markets"].execute
