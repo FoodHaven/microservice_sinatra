@@ -3,8 +3,8 @@ require 'csv'
 namespace :csv_load do 
   desc 'markets'
   task markets: :environment do 
-    csv_text = File.read(Rails.root.join('db', 'data', 'farmersmarkets.csv'))
-    csv = CSV.parse(csv_text, :headers => true)
+    csv_text = File.read("db/data/farmersmarkets.csv")
+    csv = CSV.parse(csv_text, headers: true)
     csv.each do |row|
       t = Market.new
       t.name = row['listing_name']

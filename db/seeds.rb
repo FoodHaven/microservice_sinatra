@@ -1,1 +1,1 @@
-system('rake markets_csv_load:all')
+Rake::Task["csv_load:markets"].invoke
