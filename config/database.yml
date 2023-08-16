@@ -1,14 +1,17 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
+
+development:
+  <<: *default
   database: microservice_sinatra_development
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: microservice_sinatra_production
 
-test:
-  adapter: postgresql
-  encoding: unicode
+test: 
+  <<: *default
   database: microservice_sinatra_test
+
+#when deploying, remember this was important: `rake db:environment:set`

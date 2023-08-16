@@ -17,7 +17,7 @@ class Market < ActiveRecord::Base
         * sin(radians(latitude)) 
       + cos(radians(#{location_params[:latitude]})) 
         * cos(radians(latitude)) 
-        * cos( radians(#{location_params[:longitude]})
+        * cos(radians(#{location_params[:longitude]})
           - radians(longitude))
       ) * 3958.8 <= #{location_params[:radius]}")
   end

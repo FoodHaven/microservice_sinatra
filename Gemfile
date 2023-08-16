@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'sinatra-activerecord'
+gem 'sinatra', require: 'sinatra/base'
 gem 'pg'
 gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'sinatra-contrib'
 gem 'rake'
 gem 'pry'
 
@@ -14,5 +15,4 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner-active_record'
   gem 'simplecov'
-  gem 'database_cleaner'
 end
