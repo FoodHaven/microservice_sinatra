@@ -2,7 +2,6 @@ require 'csv'
 require './app/models/market'
 
 namespace :csv_load do 
-  # desc 'markets'
   task markets: :environment do 
     csv = CSV.foreach("./db/data/farmersmarkets.csv", :headers => true) do |row|
       Market.create!(
@@ -20,11 +19,4 @@ namespace :csv_load do
     end
     ActiveRecord::Base.connection.reset_pk_sequence!('markets')
   end
-
-  task all: :environment do
-    # desc "all"
-      Rake::Task["csv_load:markets"].execute
-  end
 end
-
-#look into foreach
