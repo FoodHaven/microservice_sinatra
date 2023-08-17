@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec.describe 'Markets' do
   before(:each) do
-    create_list(:farmers_market, 10)
+    create_list(:market, 10)
     @market = Market.last
   end
 

@@ -101,6 +101,7 @@ DEPENDENCIES
   pg
   pry
   puma
+  rack
   rake
   rerun
   rspec
