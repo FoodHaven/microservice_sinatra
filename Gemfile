@@ -5,6 +5,8 @@ gem 'pg'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
+gem 'puma'
+gem 'rerun'
 gem 'rake'
 gem 'pry'
 

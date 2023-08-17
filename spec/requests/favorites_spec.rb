@@ -15,7 +15,7 @@ RSpec.describe 'Markets' do
         market_ids: [@market_1_id, @market_2_id, @market_4_id ]
       }
 
-      get api_v1_markets_favorites_path, params: query_params
+      get 'markets/favorites', params: query_params
 
       expect(response).to be_successful
     end
@@ -25,7 +25,7 @@ RSpec.describe 'Markets' do
         market_ids: [@market_1_id, @market_2_id, @market_4_id ]
       }
 
-      get api_v1_markets_favorites_path, params: query_params
+      get 'markets/favorites', params: query_params
 
       markets = JSON.parse(response.body, symbolize_names: true)[:data]
       
