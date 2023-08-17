@@ -7,7 +7,7 @@ Dir.glob(File.join(APP_ROOT, 'app', 'controllers', '*.rb')).each { |file| requir
 # require the model(s)
 Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require file }
 # require rake task(s)
-Dir.glob(File.join(APP_ROOT, 'lib', 'tasks', '*.rake')).each { |file| require file }
+# Dir.glob(File.join(APP_ROOT, 'lib', 'tasks', '*.rake')).each { |file| require file }
 # require database configurations
 require File.join(APP_ROOT, 'config', 'database')
 # configure SinatraPractice settings

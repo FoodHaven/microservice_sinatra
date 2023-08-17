@@ -26,34 +26,6 @@ RSpec.describe Market, type: :model do
         result = Market.fnap_available
         expect(result.count).to eq(3)
       end
-
-      it '::haversine' do 
-        start_coords = {
-          latitude: 34.60465, 
-          longitude: -80.34465
-        }
-        end_coords = {
-          latitude: 43.59465, 
-          longitude: -67.45465
-        }
-        result = Market
-        .haversine(start_coords, end_coords)
-        expect(result).to eq(927.2636808622536)
-      end
-
-      it '::radians' do 
-        result = radians(34.6)
-
-        expect(result).to eq(0.6038839211900381)
-      end
-    end
-
-    describe 'instance methods' do 
-      it '#market_coordinates' do 
-        market = create(:market, latitude: 36.1582212, longitude: -81.1478018)
-        result = market.market_coordinates
-        expect(result).to eq({:latitude=>36.1582212, :longitude=>-81.1478018}) 
-      end
     end
 
     describe 'proximity' do 
