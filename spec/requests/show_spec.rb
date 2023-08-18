@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe 'Markets' do
+RSpec.describe 'Markets', type: :request do
   before(:each) do
     create_list(:market, 10)
     @market = Market.last

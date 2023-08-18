@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+ruby '3.2.2'
+
+
 gem 'sinatra', require: 'sinatra/base'
 gem 'pg'
 gem 'activerecord'
@@ -11,10 +14,13 @@ gem 'rake'
 gem 'pry'
 
 group :test do 
+  gem 'database_cleaner-active_record'
   gem 'rspec'
+  gem 'rack'
+  gem 'rack-test'
   gem 'factory_bot'
   gem 'faker'
   gem 'shoulda-matchers'
-  gem 'database_cleaner-active_record'
   gem 'simplecov'
+  gem 'capybara'
 end
