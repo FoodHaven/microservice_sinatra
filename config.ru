@@ -1,6 +1,4 @@
 require 'sinatra'
-require 'sinatra/base'
-require 'sinatra/contrib'
 
 require 'bundler'
 Bundler.require
