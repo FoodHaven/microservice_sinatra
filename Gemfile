@@ -12,8 +12,7 @@ gem 'puma'
 gem 'rerun'
 gem 'rake'
 gem 'pry'
-# gem 'fast_jsonapi'
-gem "jsonapi-serializer"
+gem 'jsonapi-serializer'
 
 group :test do 
   gem 'database_cleaner-active_record'

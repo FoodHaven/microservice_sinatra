@@ -18,6 +18,7 @@ class Microservice < Sinatra::Base
   end
   
   get '/markets/favorites' do 
-    require 'pry'; binding.pry
+    markets = Market.find(params[:market_ids])
+    json MarketSerializer.new(markets)
   end
 end
