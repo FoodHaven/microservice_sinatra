@@ -15,7 +15,7 @@ RSpec.describe 'Markets', type: :request do
         radius: 50
       }
 
-      get 'markets/search', params: query_params
+      get 'markets/search', query_params
 
       expect(last_response).to be_successful
     end
@@ -27,7 +27,7 @@ RSpec.describe 'Markets', type: :request do
         radius: 50
       }
 
-      get 'markets/search', params: query_params
+      get 'markets/search', query_params
 
       markets = JSON.parse(last_response.body, symbolize_names: true)[:data]
       

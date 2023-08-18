@@ -11,11 +11,13 @@ class Microservice < Sinatra::Base
     markets = Market.all
     json MarketSerializer.new(markets)
   end
-
+  
   get '/markets/search' do 
-    require 'pry'; binding.pry
+    markets = Market.nearby_markets(params)
+    json MarketSerializer.new(markets)
   end
-
+  
   get '/markets/favorites' do 
+    require 'pry'; binding.pry
   end
 end
