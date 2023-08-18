@@ -1,14 +1,14 @@
 require './spec/spec_helper.rb'
 
-RSpec.describe 'Market Index' do
+RSpec.describe 'Market Index', type: :request do
   
   describe 'endpoint' do
     it 'returns all markets' do 
       create_list(:market, 5)
       get '/markets'
-      expect(response).to be_successful
+      expect(last_response).to be_successful
 
-      markets = JSON.parse(response.body, symbolize_names: true)[:data]
+      markets = JSON.parse(last_response.body, symbolize_names: true)[:data]
 
       expect(markets.count).to eq(5)
 

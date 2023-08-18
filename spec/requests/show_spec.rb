@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe 'Markets', type: :request do
+RSpec.describe 'Markets' do
   before(:each) do
     create_list(:market, 10)
     @market = Market.last
@@ -10,13 +10,13 @@ RSpec.describe 'Markets', type: :request do
     it 'hits the endpoint' do 
       get "markets/#{@market.id}"
       
-      expect(response).to be_successful
+      expect(last_response).to be_successful
     end
     
     it 'returns json object for the correct market' do 
       get "markets/#{@market.id}"
 
-      market = JSON.parse(response.body, symbolize_names: true)[:data]
+      market = JSON.parse(last_response.body, symbolize_names: true)[:data]
       
       expect(market[:attributes]).to have_key(:name)
       expect(market[:attributes][:name]).to eq(@market.name)

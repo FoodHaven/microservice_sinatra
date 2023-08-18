@@ -1,20 +1,14 @@
 require 'sinatra'
-require 'sinatra/json'
+require 'sinatra/base'
 
 class Microservice < Sinatra::Base
   get '/' do 
-    json 'Hello World'
+    'Hello World'
   end
 
   get '/markets' do 
-    
-  end
-
-  get '/markets/search' do 
-
   end
 
   get '/markets/favorites' do 
-
   end
 end

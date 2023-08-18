@@ -1,6 +1,6 @@
 require './spec/spec_helper.rb'
 
-RSpec.describe 'Markets' do
+RSpec.describe 'Markets', type: :request do
   before(:each) do
     @market_1_id = create(:market).id
     @market_2_id = create(:market).id
@@ -17,7 +17,7 @@ RSpec.describe 'Markets' do
 
       get 'markets/favorites', params: query_params
 
-      expect(response).to be_successful
+      expect(last_response).to be_successful
     end
 
     it 'returns the correct json objects' do 
@@ -27,7 +27,7 @@ RSpec.describe 'Markets' do
 
       get 'markets/favorites', params: query_params
 
-      markets = JSON.parse(response.body, symbolize_names: true)[:data]
+      markets = JSON.parse(last_response.body, symbolize_names: true)[:data]
       
       markets.each do |market|
         expect(market[:attributes]).to have_key(:name)

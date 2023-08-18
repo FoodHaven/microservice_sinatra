@@ -1,6 +1,6 @@
 require './spec/spec_helper.rb'
 
-RSpec.describe 'Markets' do
+RSpec.describe 'Markets', type: :request do
   before(:each) do
     create_list(:market, 10)
     @market = create(:market, longitude: -104.0000000, latitude: 42.0000000)
@@ -17,7 +17,7 @@ RSpec.describe 'Markets' do
 
       get 'markets/search', params: query_params
 
-      expect(response).to be_successful
+      expect(last_response).to be_successful
     end
 
     it 'returns json objects' do 
@@ -29,7 +29,7 @@ RSpec.describe 'Markets' do
 
       get 'markets/search', params: query_params
 
-      markets = JSON.parse(response.body, symbolize_names: true)[:data]
+      markets = JSON.parse(last_response.body, symbolize_names: true)[:data]
       
       markets.each do |market|
         expect(market[:attributes]).to have_key(:name)
