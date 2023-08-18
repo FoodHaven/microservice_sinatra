@@ -11,10 +11,6 @@ require_relative 'factories'
 require 'simplecov'
 SimpleCov.start
 
-# require 'capybara/dsl'
-# Capybara.app = Microservice
-# Capybara.save_path = 'tmp/capybara'
-
 DatabaseCleaner.strategy = :truncation
 
 def app
@@ -23,8 +19,6 @@ end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
-
-  # config.include Capybara::DSL
 
   config.include FactoryBot::Syntax::Methods
   

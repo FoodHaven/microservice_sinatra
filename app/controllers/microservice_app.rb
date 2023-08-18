@@ -1,8 +1,8 @@
 require 'sinatra'
-require 'sinatra/base'
+# require 'sinatra/base'
 
 class Microservice < Sinatra::Base
-  get '/' do 
+  get '/hello' do 
     'Hello World'
   end
 
