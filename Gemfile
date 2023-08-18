@@ -12,6 +12,8 @@ gem 'puma'
 gem 'rerun'
 gem 'rake'
 gem 'pry'
+# gem 'fast_jsonapi'
+gem "jsonapi-serializer"
 
 group :test do 
   gem 'database_cleaner-active_record'
@@ -22,5 +24,4 @@ group :test do
   gem 'faker'
   gem 'shoulda-matchers'
   gem 'simplecov'
-  gem 'capybara'
 end

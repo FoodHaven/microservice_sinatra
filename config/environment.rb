@@ -6,6 +6,8 @@ APP_ROOT = File.expand_path('..', __dir__)
 Dir.glob(File.join(APP_ROOT, 'app', 'controllers', '*.rb')).each { |file| require file }
 # require the model(s)
 Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require file }
+#require serializers
+Dir.glob(File.join(APP_ROOT, 'app', 'serializers', '*.rb')).each { |file| require file }
 # require database configurations
 require File.join(APP_ROOT, 'config', 'database')
 # configure SinatraPractice settings
