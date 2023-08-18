@@ -21,6 +21,5 @@ group :test do
   gem 'rack-test'
   gem 'factory_bot'
   gem 'faker'
-  gem 'shoulda-matchers'
   gem 'simplecov'
 end
