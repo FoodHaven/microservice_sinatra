@@ -21,4 +21,9 @@ class Microservice < Sinatra::Base
     markets = Market.find(params[:market_ids])
     json MarketSerializer.new(markets)
   end
+  
+  get '/markets/:id' do 
+    market = Market.find(params[:id])
+    json MarketSerializer.new(market)
+  end
 end
