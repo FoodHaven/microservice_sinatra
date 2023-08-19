@@ -10,7 +10,7 @@ Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require fil
 Dir.glob(File.join(APP_ROOT, 'app', 'serializers', '*.rb')).each { |file| require file }
 # require database configurations
 require File.join(APP_ROOT, 'config', 'database')
-# configure SinatraPractice settings
+# configure Microservice settings
 class Microservice < Sinatra::Base
   set :method_override, true
   set :root, APP_ROOT

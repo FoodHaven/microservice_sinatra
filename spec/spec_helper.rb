@@ -2,7 +2,10 @@ require 'rspec'
 require 'rack/test'
 
 require 'bundler'
-Bundler.require(:default, :test)
+Bundler.require(:test)
+
+ENV["RACK_ENV"] = "test"
+
 require File.expand_path('../../config/environment.rb', __FILE__)
 
 require 'factory_bot'
@@ -11,18 +14,20 @@ require_relative 'factories'
 require 'simplecov'
 SimpleCov.start
 
-DatabaseCleaner.strategy = :truncation
 
 def app
   Microservice
 end
 
+
 RSpec.configure do |config|
   config.include Rack::Test::Methods
-
+  
   config.include FactoryBot::Syntax::Methods
   
-  config.before(:all) do
+  DatabaseCleaner.strategy = :truncation
+  
+  config.before(:each) do
     DatabaseCleaner.clean
   end
   config.after(:each) do
