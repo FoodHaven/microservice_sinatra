@@ -1,10 +1,11 @@
+ENV["RACK_ENV"] = "test"
+
 require 'rspec'
 require 'rack/test'
 
 require 'bundler'
-Bundler.require(:test)
+Bundler.require(:default, :test)
 
-ENV["RACK_ENV"] = "test"
 
 require File.expand_path('../../config/environment.rb', __FILE__)
 
