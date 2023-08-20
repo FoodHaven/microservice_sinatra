@@ -1,0 +1,1 @@
+Rake::Task["csv_load:markets"].execute

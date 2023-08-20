@@ -6,12 +6,12 @@ APP_ROOT = File.expand_path('..', __dir__)
 Dir.glob(File.join(APP_ROOT, 'app', 'controllers', '*.rb')).each { |file| require file }
 # require the model(s)
 Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require file }
+#require serializers
+Dir.glob(File.join(APP_ROOT, 'app', 'serializers', '*.rb')).each { |file| require file }
 # require database configurations
 require File.join(APP_ROOT, 'config', 'database')
-# configure SinatraPractice settings
-class MicroService < Sinatra::Base
+# configure Microservice settings
+class Microservice < Sinatra::Base
   set :method_override, true
   set :root, APP_ROOT
-  set :views, File.join(APP_ROOT, 'app', 'views')
-  set :public_folder, File.join(APP_ROOT, 'app', 'public')
 end
