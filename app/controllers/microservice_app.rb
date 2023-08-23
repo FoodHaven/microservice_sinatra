@@ -1,29 +1,43 @@
-require 'sinatra'
-require 'sinatra/contrib'
-
 class Microservice < Sinatra::Base
-  
-  get '/' do 
+  require 'sinatra/json'
+
+  get '/' do
     'Hello World'
   end
 
-  get '/markets' do 
+  get '/markets' do
     markets = Market.all
-    json MarketSerializer.new(markets)
+    serialize(markets)
   end
-  
-  get '/markets/search' do 
-    markets = Market.nearby_markets(params)
-    json MarketSerializer.new(markets)
+
+  get '/markets/search' do
+    # Add validation for params here if needed
+    search_service = MarketSearchService.new(params)
+    markets = search_service.nearby_markets
+    serialize(markets)
   end
-  
-  get '/markets/favorites' do 
+
+  get '/markets/favorites' do
     markets = Market.find(params[:market_ids])
-    json MarketSerializer.new(markets)
+    serialize(markets)
   end
-  
-  get '/markets/:id' do 
-    market = Market.find(params[:id])
-    json MarketSerializer.new(market)
+
+  get '/markets/:id' do
+    market = Market.find_by(id: params[:id])
+    if market
+      serialize(market)
+    else
+      not_found
+    end
+  end
+
+  not_found do
+    json error: 'Resource not found'
+  end
+
+  private
+
+  def serialize(object)
+    json MarketSerializer.new(object)
   end
 end
