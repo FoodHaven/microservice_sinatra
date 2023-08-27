@@ -8,9 +8,7 @@ development:
 
 production:
   <<: *default
-
-  database: <%= ENV["DATABASE_URL"] %>
-
+  database: microservice_sinatra_production
 
 test: 
   <<: *default
