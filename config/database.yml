@@ -9,6 +9,10 @@ production:
   user: <%= ENV["DATABASE_USER"] %>
   password: <%= ENV["DATABASE_PASSWORD"] %>
 
+development: 
+  <<: *default
+  database: microservice_sinatra_development
+
 test: 
   <<: *default
   database: microservice_sinatra_test
