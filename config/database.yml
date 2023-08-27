@@ -2,13 +2,14 @@ default: &default
   adapter: postgresql
   encoding: unicode
 
-development:
-  <<: *default
-  database: microservice_sinatra_development
-
 production:
   <<: *default
   database: microservice_sinatra_production
+  host: <%= ENV['DATABASE_HOST'] %>
+
+development:
+  <<: *default
+  database: microservice_sinatra_development
 
 test: 
   <<: *default
