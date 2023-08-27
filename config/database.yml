@@ -4,10 +4,8 @@ default: &default
 
 production:
   <<: *default
-  database: microservice_sinatra_production
-  host: <%= ENV['DATABASE_HOST'] %>
-
   database: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   user: <%= ENV["DATABASE_USER"] %>
   password: <%= ENV["DATABASE_PASSWORD"] %>
 
