@@ -14,4 +14,5 @@ require File.join(APP_ROOT, 'config', 'database')
 class Microservice < Sinatra::Base
   set :method_override, true
   set :root, APP_ROOT
+  # set :database_file, "./database.yml"
 end
