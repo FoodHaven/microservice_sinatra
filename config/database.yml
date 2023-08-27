@@ -5,6 +5,7 @@ default: &default
 production:
   <<: *default
   database: microservice_sinatra_production
+  host: <%= ENV['DATABASE_HOST'] %>
 
 development:
   <<: *default
