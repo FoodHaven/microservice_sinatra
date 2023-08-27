@@ -5,4 +5,4 @@ Bundler.require
 
 require File.expand_path('../config/environment',  __FILE__)
 
-run Microservice
+run Sinatra::Microservice
