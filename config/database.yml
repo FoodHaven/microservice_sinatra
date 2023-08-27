@@ -6,6 +6,7 @@ production:
   <<: *default
   database: <%= ENV["DATABASE_URL"] %>
   host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
   user: <%= ENV["DATABASE_USER"] %>
   password: <%= ENV["DATABASE_PASSWORD"] %>
 
