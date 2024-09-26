@@ -10,7 +10,9 @@ production:
   <<: *default
 
   database: <%= ENV["DATABASE_URL"] %>
+  user: <%= ENV["DATABASE_USER"] %>
   password: <%= ENV["DATABASE_PASSWORD"] %>
+  port: <%= ENV["DATABASE_PORT"]%>
 
 test: 
   <<: *default
