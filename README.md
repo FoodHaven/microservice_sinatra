@@ -14,7 +14,7 @@ Should it be necessary to install this application on your local machine, follow
  - ```rake db:{drop,create,migrate,seed}```
    ```rake db:prepare:test```
 3. To run this application locally, run this from the command line: 
- - ```bundle exec rackup config.ru```
+ - ```b```undle exec rackup config.ru
 
 # API Endpoints
 `/api/v1/markets`
