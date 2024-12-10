@@ -17,16 +17,16 @@ Should it be necessary to install this application on your local machine, follow
  - ```bundle exec rackup config.ru```
 
 # API Endpoints
-`/api/v1/markets`
+`/markets`
 - Renders an index of all farmers markets in the database.
 
-`/api/v1/markets/{:id}`
+`/markets/{:id}`
 - Renders a JSON object for a single market by that market's id.
 
-`/api/v1/markets/search?longitude={longitude}&latitude={latitude}&radius={radius}`
+`/markets/search?longitude={longitude}&latitude={latitude}&radius={radius}`
 - Returns a list of markets within the radius of a specific latitude and longitude. Radius, latitude and longitude are passed as query parameters when making a request to this endpoint.
 
-`/api/v1/markets/favorites?market_ids[]={:id}&market_ids[]={:id}&market_ids[]={:id}`
+`/markets/favorites?market_ids[]={:id}&market_ids[]={:id}&market_ids[]={:id}`
 - Renders a list of markets by their ids. Arrays of ids are passed as query parameters when making a request to this endpoint. 
 
 `/`
